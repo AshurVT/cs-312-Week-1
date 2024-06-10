@@ -1,4 +1,5 @@
 //dice randomizer
+// version like.. 4? 5?
 
 // randomizer command, only way i know how to do this
 function getRandomNumber() {
