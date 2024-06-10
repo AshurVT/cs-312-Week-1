@@ -30,13 +30,18 @@ updateDiceImage(diceImages[1], numtest.r2);
 var headerText;
 const { r1, r2} = numbertest;
 
-if (r1 > r2) {
-    headerText = "Player 1 wins! FATALITY!!!";
-} else if (r2 > r1) {
-    headerText = "Player 2 wins! Get good scrub.";
-} else {
-    headerText = "Draw, everyone loses! 😭";
-}
+//trying to use a ternary operator
+headerText = r1 > r2 ? "Player 1 wins! FATALITY!!!" : r2 > r1 ? "Player 2 wins! Get good scrub." : "Draw, everyone loses! 😭";
+
+// discontinued code - leaving for visibility can be erased.
+// if (r1 > r2) {
+//    headerText = "Player 1 wins! FATALITY!!!";
+// } 
+// else if (r2 > r1) {
+//    headerText = "Player 2 wins! Get good scrub.";
+// } else {
+//    headerText = "Draw, everyone loses! 😭";
+//}
 
 document.querySelector("h1").innerHTML = headerText;
 
