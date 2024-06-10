@@ -1,37 +1,38 @@
 //dice randomizer
 
-// Generate random number between 1 and 6
+// randomizer command, only way i know how to do this
 function getRandomNumber() {
     return Math.floor(Math.random() * 6) + 1;
 }
 
-// Update dice image source
 function updateDiceImage(diceElement, randomNumber) {
     var diceImage = "images/dice" + randomNumber + ".png";
     diceElement.setAttribute("src", diceImage);
 }
 
-// Get random numbers for both dice
-var randomNumber1 = getRandomNumber();
-var randomNumber2 = getRandomNumber();
+// two dice of course requires 2 numbers
+var numtest = {r1: getRandomNumber(), r2: getRandomNumber()
+}
+
+
 
 // Select dice image elements
 var diceImages = document.querySelectorAll("img");
 
-// Update dice images
-updateDiceImage(diceImages[0], randomNumber1);
-updateDiceImage(diceImages[1], randomNumber2);
+// update the object i made for the random numbers to match the dice image
+updateDiceImage(diceImages[0], numtest.r1);
+updateDiceImage(diceImages[1], numtest.r2);
 
 // Determine winner and update header text
 var headerText;
-if (randomNumber1 > randomNumber2) {
-    headerText = "Winner! 🚩Player 1!";
-} else if (randomNumber2 > randomNumber1) {
-    headerText = "Winner!🚩 Player 2!";
+if (numtest.r1 > numtest.r2) {
+    headerText = "Player 1 wins! FATALITY!!!";
+} else if (numtest.r2 > numtest.r1) {
+    headerText = "Player 2 wins! Get good scrub.";
 } else {
     headerText = "Draw, everyone loses! 😭";
 }
 
 document.querySelector("h1").innerHTML = headerText;
 
-// This is a test
+
