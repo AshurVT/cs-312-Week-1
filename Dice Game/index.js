@@ -27,9 +27,11 @@ updateDiceImage(diceImages[1], numtest.r2);
 // Determine winner and update header text
 // because i changed the numtest to be objects I needed to change it here as well.
 var headerText;
-if (numtest.r1 > numtest.r2) {
+const { r1, r2} = numbertest;
+
+if (r1 > r2) {
     headerText = "Player 1 wins! FATALITY!!!";
-} else if (numtest.r2 > numtest.r1) {
+} else if (r2 > r1) {
     headerText = "Player 2 wins! Get good scrub.";
 } else {
     headerText = "Draw, everyone loses! 😭";
