@@ -11,7 +11,8 @@ function updateDiceImage(diceElement, randomNumber) {
 }
 
 // two dice of course requires 2 numbers
-var numtest = {r1: getRandomNumber(), r2: getRandomNumber()
+var numtest = {r1: getRandomNumber(), 
+               r2: getRandomNumber() // split this into multiple lines in case i need to add more random number in future.
 }
 
 
@@ -24,6 +25,7 @@ updateDiceImage(diceImages[0], numtest.r1);
 updateDiceImage(diceImages[1], numtest.r2);
 
 // Determine winner and update header text
+// because i changed the numtest to be objects I needed to change it here as well.
 var headerText;
 if (numtest.r1 > numtest.r2) {
     headerText = "Player 1 wins! FATALITY!!!";
